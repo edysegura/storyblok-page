@@ -13,7 +13,7 @@ export async function getServerSideProps(context) {
   let params = {
     version: "draft", // or 'published'
   }
-  const [ slug ] = context.req.headers.host.split('.')
+  const { slug } = context.params
   // checks if Next.js is in preview mode
   if (context.preview) {
     // loads the draft version
